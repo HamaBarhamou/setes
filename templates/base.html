@@ -87,19 +87,19 @@
     <!-- Header -->
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-            <a href="#" class="logo d-flex align-items-center">
+            <a href="{% url 'home' %}" class="logo d-flex align-items-center">
                 <img src="{% static 'assets/img/logo.jpeg' %}" alt="Logo SETES" style="height: 50px; margin-right: 10px;">
                 <h1 class="sitename" style="margin: 0;">SETES SARL</h1>
             </a>
 
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="#hero" class="active">Accueil</a></li>
-                    <li><a href="#about">À propos</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Réalisations</a></li>
-                    <li><a href="#team">Équipe</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="{% url 'home' %}#hero" class="active">Accueil</a></li>
+                    <li><a href="{% url 'home' %}#about">À propos</a></li>
+                    <li><a href="{% url 'home' %}#services">Services</a></li>
+                    <li><a href="{% url 'home' %}#portfolio">Réalisations</a></li>
+                    <li><a href="{% url 'home' %}#team">Équipe</a></li>
+                    <li><a href="{% url 'home' %}#contact">Contact</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
