@@ -88,12 +88,3 @@ Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de
 ---
 
 Développé par Issaka Hama Barhamou et l'équipe SETES SARL.
-
-
-### Explications
-- Le fichier présente d'abord un résumé du projet.
-- Il inclut les étapes d'installation et d'utilisation pour les développeurs souhaitant travailler sur le projet.
-- La section **Contribuer** indique la manière dont les autres développeurs peuvent proposer des modifications.
-- La section **Licence** rappelle que le projet est open-source et peut être utilisé librement selon les termes de la licence spécifiée.
-
-N'oubliez pas d'ajouter un fichier `requirements.txt` pour répertorier les dépendances Python nécessaires à l'exécution du projet.
