@@ -125,8 +125,8 @@
               <div class="footer-contact pt-3">
                 <p>Avenue de l'Indépendance</p>
                 <p>Niamey, Niger</p>
-                <p class="mt-3"><strong>Téléphone :</strong> <span>+227 20 20 00 00</span></p>
-                <p><strong>Email :</strong> <span>info@setes-sarl.com</span></p>
+                <p class="mt-3"><strong>Téléphone :</strong> <span>+227 94 94 01 28</span></p>
+                <p><strong>Email :</strong> <span>info@setes.com</span></p>
               </div>
               <div class="social-links d-flex mt-4">
                 <a href="#"><i class="bi bi-twitter"></i></a>
@@ -150,11 +150,13 @@
             <div class="col-lg-2 col-md-3 footer-links">
               <h4>Nos Services</h4>
               <ul>
-                <li><a href="#">Énergie & Télécommunication</a></li>
-                <li><a href="#">Solutions Numériques</a></li>
-                <li><a href="#">Sécurité & Maintenance</a></li>
-                <li><a href="#">Audit et Conseil</a></li>
-                <li><a href="#">Systèmes Solaires</a></li>
+                <li><a href="{% url 'service-details' 'etudes-techniques' %}">Études et conception de sites techniques</a></li>
+                <li><a href="{% url 'service-details' 'systemes-solaires' %}">Systèmes solaires photovoltaïques</a></li>
+                <li><a href="{% url 'service-details' 'systemes-securite' %}">Systèmes de sécurité</a></li>
+                <li><a href="{% url 'service-details' 'maintenance-telecoms' %}">Maintenance et exploitation des systèmes télécoms</a></li>
+                <li><a href="{% url 'service-details' 'groupes-electrogenes' %}">Groupes électrogènes</a></li>
+                <li><a href="{% url 'service-details' 'audit-pylones' %}">Audit et maintenance des pylônes</a></li>
+                <li><a href="{% url 'service-details' 'solutions-numeriques' %}">Développement de solutions numérique</a></li>
               </ul>
             </div>
     

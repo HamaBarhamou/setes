@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}{{ service.title }} - SETES SARL{% endblock %}
+{% block title %}Détails du Service - SETES SARL{% endblock %}
 
 {% block content %}
 <!-- Page Title -->
 <div class="page-title dark-background">
     <div class="container">
-        <h1>{{ service.title }}</h1>
+        <h1>Détails du Service</h1>
         <nav class="breadcrumbs">
             <ol>
                 <li><a href="{% url 'home' %}">Accueil</a></li>
-                <li class="current">{{ service.title }}</li>
+                <li class="current">Détails du Service</li>
             </ol>
         </nav>
     </div>
@@ -22,20 +22,23 @@
         <div class="row gy-4">
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="services-list">
-                    {% for key, value in services.items %}
-                        <a href="{% url 'service-details' key %}" class="{% if key == service.slug %}active{% endif %}">{{ value.title }}</a>
-                    {% endfor %}
+                    <a href="#" class="active">Études Techniques</a>
+                    <a href="#">Maintenance Énergie</a>
+                    <a href="#">Télécommunications</a>
+                    <a href="#">Solutions Numériques</a>
+                    <a href="#">Sécurité et Surveillance</a>
                 </div>
 
-                <h4>{{ service.title }}</h4>
-                <p>{{ service.description }}</p>
+                <h4>Solutions Personnalisées pour Tous Vos Besoins</h4>
+                <p>Nous fournissons des services sur mesure adaptés à vos besoins spécifiques, garantissant des solutions innovantes et performantes.</p>
             </div>
 
             <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-                <!-- <img src="{% static 'assets/img/services.jpg' %}" alt="{{ service.title }}" class="img-fluid services-img"> -->
-                <img src="{% static service.image %}" alt="{{ service.title }}" class="img-fluid services-img">
-                <h3>{{ service.title }}</h3>
-                <p>{{ service.details }}</p>
+                <img src="{% static 'assets/img/services.jpg' %}" alt="" class="img-fluid services-img">
+                <h3>Nos Services Détails pour des Résultats Optimaux</h3>
+                <p>
+                    Chez SETES SARL, nous nous engageons à offrir des solutions de qualité pour répondre à vos attentes les plus exigeantes. Que ce soit pour des projets d'énergie, de télécommunication ou de sécurité, notre expertise est à votre service.
+                </p>
                 <ul>
                     <li><i class="bi bi-check-circle"></i> <span>Des solutions adaptées à vos besoins spécifiques.</span></li>
                     <li><i class="bi bi-check-circle"></i> <span>Une expertise éprouvée pour garantir la réussite de vos projets.</span></li>
@@ -43,6 +46,9 @@
                 </ul>
                 <p>
                     Nous travaillons en étroite collaboration avec nos clients pour comprendre leurs besoins et proposer des solutions personnalisées, efficaces et durables.
+                </p>
+                <p>
+                    Grâce à notre engagement envers l'excellence, SETES SARL est le partenaire idéal pour vous accompagner dans vos projets de développement.
                 </p>
             </div>
         </div>

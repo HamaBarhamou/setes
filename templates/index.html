@@ -164,7 +164,8 @@
             <div>
               <h4 class="title">Études et conception de sites techniques</h4>
               <p class="description">Des études personnalisées pour la conception et l’installation de sites techniques répondant aux normes industrielles.</p>
-              <a href="{% url 'service-details' %}" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
+              <a href="{% url 'service-details' 'etudes-techniques' %}" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
+
             </div>
           </div>
           <!-- End Service Item -->
@@ -174,7 +175,7 @@
             <div>
               <h4 class="title">Fourniture et pose de systèmes solaires photovoltaïques</h4>
               <p class="description">Des solutions d’énergie renouvelable pour vos besoins en électricité durable et économique.</p>
-              <a href="{% url 'service-details' %}" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
+              <a href="{% url 'service-details' 'systemes-solaires' %}" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
             </div>
           </div>
           <!-- End Service Item -->
@@ -184,7 +185,7 @@
             <div>
               <h4 class="title">Fourniture et installation de systèmes de sécurité</h4>
               <p class="description">Sécurisez vos installations avec nos systèmes de surveillance et de protection incendie.</p>
-              <a href="{% url 'service-details' %}" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
+              <a href="{% url 'service-details' 'systemes-securite' %}" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
             </div>
           </div>
           <!-- End Service Item -->
@@ -194,7 +195,7 @@
             <div>
               <h4 class="title">Maintenance et exploitation des systèmes télécoms</h4>
               <p class="description">Nous assurons l’audit, la maintenance et l’exploitation des systèmes FH, VSAT, FO et autres infrastructures télécom.</p>
-              <a href="{% url 'service-details' %}" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
+              <a href="{% url 'service-details' 'maintenance-telecoms' %}" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
             </div>
           </div>
           <!-- End Service Item -->
@@ -204,7 +205,7 @@
             <div>
               <h4 class="title">Fourniture de groupes électrogènes</h4>
               <p class="description">Nous proposons des solutions fiables pour assurer la continuité de l’alimentation électrique.</p>
-              <a href="{% url 'service-details' %}" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
+              <a href="{% url 'service-details' 'groupes-electrogenes' %}" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
             </div>
           </div>
           <!-- End Service Item -->
@@ -214,7 +215,7 @@
             <div>
               <h4 class="title">Audit et maintenance des pylônes</h4>
               <p class="description">Nos services incluent l’audit, l’installation et la maintenance des pylônes télécoms pour une performance optimale.</p>
-              <a href="{% url 'service-details' %}" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
+              <a href="{% url 'service-details' 'audit-pylones' %}" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
             </div>
           </div>
           <!-- End Service Item -->
@@ -225,7 +226,7 @@
             <div>
               <h4 class="title">Développement de solutions numériques</h4>
               <p class="description">Ingénierie logicielle pour la gestion de l'énergie, l'analyse de données, la gestion des réseaux intelligents, et plus encore.</p>
-              <a href="{% url 'service-details' %}" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
+              <a href="{% url 'service-details' 'solutions-numeriques' %}" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
             </div>
           </div>
           <!-- End New Service Item -->
@@ -288,9 +289,9 @@
             
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <div class="portfolio-content h-100">
-                <img src="{% static 'assets/img/portfolio/product-1.jpg' %}" class="img-fluid" alt="">
+                <img src="{% static 'assets/img/portfolio/product-1-.jpg' %}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="{% static 'assets/img/portfolio/product-1.jpg' %}" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% static 'assets/img/portfolio/product-1-.jpg' %}" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="{% url 'portfolio-details' %}" title="En savoir plus" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -329,9 +330,9 @@
             
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <div class="portfolio-content h-100">
-                <img src="{% static 'assets/img/portfolio/product-2.jpg' %}" class="img-fluid" alt="">
+                <img src="{% static 'assets/img/portfolio/product-2-.jpg' %}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="{% static 'assets/img/portfolio/product-2.jpg' %}" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% static 'assets/img/portfolio/product-2-.jpg' %}" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="{% url 'portfolio-details' %}" title="En savoir plus" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -370,9 +371,9 @@
             
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <div class="portfolio-content h-100">
-                <img src="{% static 'assets/img/portfolio/product-3.jpg' %}" class="img-fluid" alt="">
+                <img src="{% static 'assets/img/portfolio/product-3-.jpg' %}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="{% static 'assets/img/portfolio/product-3.jpg' %}" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% static 'assets/img/portfolio/product-3-.jpg' %}" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="{% url 'portfolio-details' %}" title="En savoir plus" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
