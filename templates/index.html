@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>SETES SARL - Énergies, Télécommunication et Services</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Hidayah
+  * Template URL: https://bootstrapmade.com/hidayah-free-simple-html-template-for-corporate/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">SETES SARL</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Accueil</a></li>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Réalisations</a></li>
+          <li><a href="#team">Équipe</a></li>
+          <li><a href="#contact">Contact</a></li>
+
+          <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li> -->
+
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="carousel-item active">
+          <img src="{% static 'assets/img/hero-carousel/hero-carousel-1.jpg' %}" alt="">
+          <div class="carousel-container">
+            <h2>Bienvenue chez SETES SARL</h2>
+            <p>Votre partenaire de confiance pour les solutions énergétiques, télécommunications et services techniques au Niger.</p>
+            <a href="#about" class="btn-get-started">En savoir plus</a>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="{% static 'assets/img/hero-carousel/hero-carousel-2.jpg' %}" alt="">
+          <div class="carousel-container">
+            <h2>Expertise et Innovation</h2>
+            <p>Nous proposons des solutions complètes pour vos besoins en énergies, télécommunications, sécurité et services techniques.</p>
+            <a href="#about" class="btn-get-started">En savoir plus</a>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="{% static 'assets/img/hero-carousel/hero-carousel-3.jpg %'}" alt="">
+          <div class="carousel-container">
+            <h2>Qualité et Fiabilité</h2>
+            <p>SETES SARL s’engage à vous offrir des services de qualité pour vos projets les plus exigeants.</p>
+            <a href="#about" class="btn-get-started">En savoir plus</a>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+        <ol class="carousel-indicators"></ol>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-5 position-relative" data-aos="fade-up" data-aos-delay="200">
+            <img src="{% static 'assets/img/about.jpg' %}" class="img-fluid" alt="">
+            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+          </div>
+
+          <div class="col-lg-7 content ps-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <h3>À propos de SETES SARL</h3>
+            <p>
+              SETES SARL est une société nigérienne spécialisée dans les solutions énergétiques, télécommunications, sécurité et services techniques. Nous proposons des services de qualité pour répondre aux besoins de nos clients dans divers secteurs.
+            </p>
+            <ul>
+              <li>
+                <i class="bi bi-diagram-3"></i>
+                <div>
+                  <h5>Fourniture de matériels électriques</h5>
+                  <p>Nous fournissons des équipements électriques adaptés à vos besoins industriels et domestiques.</p>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-fullscreen-exit"></i>
+                <div>
+                  <h5>Maintenance énergie des sites GSM</h5>
+                  <p>Des services de maintenance fiables pour garantir la disponibilité continue de vos infrastructures télécom.</p>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-broadcast"></i>
+                <div>
+                  <h5>Solutions numériques et audit des systèmes énergétiques</h5>
+                  <p>Analyse, gestion et contrôle pour optimiser vos systèmes d’énergie et améliorer l’efficacité.</p>
+                </div>
+              </li>
+            </ul>
+            <p>
+              Chez SETES SARL, nous mettons un point d'honneur à offrir des solutions sur mesure adaptées aux besoins de chaque client. Notre expertise diversifiée et notre engagement envers l'excellence nous permettent de répondre aux défis techniques les plus complexes. Nous accompagnons nos partenaires dans la réalisation de leurs projets, en garantissant une qualité irréprochable et des résultats durables.
+            </p>            
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-emoji-smile"></i>
+              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Clients Satisfaits</strong> <span>partenaires dans la réussite</span></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-journal-richtext"></i>
+              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Projets Réalisés</strong> <span>dans divers secteurs</span></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-headset"></i>
+              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Heures de Support</strong> <span>assistance technique continue</span></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-people"></i>
+              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Experts Engagés</strong> <span>dans nos équipes</span></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Nos Services</h2>
+        <div><span>Découvrez nos</span> <span class="description-title">Prestations</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+      
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon flex-shrink-0"><i class="bi bi-diagram-3"></i></div>
+            <div>
+              <h4 class="title">Études et conception de sites techniques</h4>
+              <p class="description">Des études personnalisées pour la conception et l’installation de sites techniques répondant aux normes industrielles.</p>
+              <a href="service-details.html" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
+            </div>
+          </div>
+          <!-- End Service Item -->
+      
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon flex-shrink-0"><i class="bi bi-sun"></i></div>
+            <div>
+              <h4 class="title">Fourniture et pose de systèmes solaires photovoltaïques</h4>
+              <p class="description">Des solutions d’énergie renouvelable pour vos besoins en électricité durable et économique.</p>
+              <a href="service-details.html" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
+            </div>
+          </div>
+          <!-- End Service Item -->
+      
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon flex-shrink-0"><i class="bi bi-shield-lock"></i></div>
+            <div>
+              <h4 class="title">Fourniture et installation de systèmes de sécurité</h4>
+              <p class="description">Sécurisez vos installations avec nos systèmes de surveillance et de protection incendie.</p>
+              <a href="service-details.html" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
+            </div>
+          </div>
+          <!-- End Service Item -->
+      
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon flex-shrink-0"><i class="bi bi-wifi"></i></div>
+            <div>
+              <h4 class="title">Maintenance et exploitation des systèmes télécoms</h4>
+              <p class="description">Nous assurons l’audit, la maintenance et l’exploitation des systèmes FH, VSAT, FO et autres infrastructures télécom.</p>
+              <a href="service-details.html" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
+            </div>
+          </div>
+          <!-- End Service Item -->
+      
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon flex-shrink-0"><i class="bi bi-lightning"></i></div>
+            <div>
+              <h4 class="title">Fourniture de groupes électrogènes</h4>
+              <p class="description">Nous proposons des solutions fiables pour assurer la continuité de l’alimentation électrique.</p>
+              <a href="service-details.html" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
+            </div>
+          </div>
+          <!-- End Service Item -->
+      
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
+            <div class="icon flex-shrink-0"><i class="bi bi-tower"></i></div>
+            <div>
+              <h4 class="title">Audit et maintenance des pylônes</h4>
+              <p class="description">Nos services incluent l’audit, l’installation et la maintenance des pylônes télécoms pour une performance optimale.</p>
+              <a href="service-details.html" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
+            </div>
+          </div>
+          <!-- End Service Item -->
+      
+          <!-- New Service Item for Digital Solutions -->
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="700">
+            <div class="icon flex-shrink-0"><i class="bi bi-laptop"></i></div>
+            <div>
+              <h4 class="title">Développement de solutions numériques</h4>
+              <p class="description">Ingénierie logicielle pour la gestion de l'énergie, l'analyse de données, la gestion des réseaux intelligents, et plus encore.</p>
+              <a href="service-details.html" class="readmore stretched-link"><span>En savoir plus</span><i class="bi bi-chevron-right"></i></a>
+            </div>
+          </div>
+          <!-- End New Service Item -->
+      
+        </div>
+      </div>
+    </section><!-- /Services Section -->
+
+   <!-- Section Appel à l'Action -->
+  <section id="call-to-action" class="call-to-action section dark-background">
+    <img src="{% static 'assets/img/cta-bg.jpg' %}" alt="">
+
+    <div class="container">
+      <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+        <div class="col-xl-10">
+          <div class="text-center">
+            <h3>Prêt à collaborer avec nous ?</h3>
+            <p>Chez SETES SARL, nous sommes déterminés à vous fournir des solutions sur mesure qui répondent à vos besoins spécifiques. Contactez-nous dès aujourd'hui pour discuter de vos projets, qu'il s'agisse d'énergie, de télécommunications, de sécurité, ou du genie logicielle.</p>
+            <a class="cta-btn" href="#contact">Contactez-nous</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- /Section Appel à l'Action -->
+
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Nos Réalisations</h2>
+        <div><span>Découvrez Notre</span> <span class="description-title">Portfolio</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container-fluid">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">Tous</li>
+            <li data-filter=".filter-app">Télécommunications</li>
+            <li data-filter=".filter-product">Énergie</li>
+            <li data-filter=".filter-branding">Sécurité</li>
+            <li data-filter=".filter-books">Solutions Numériques</li>
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row g-0 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/app-1.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static 'assets/img/portfolio/app-1.jpg' %}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'portfolio-details' %}" title="En savoir plus" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Fin Élément Portfolio -->
+            
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/product-1.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static 'assets/img/portfolio/product-1.jpg' %}" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'portfolio-details' %}" title="En savoir plus" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Fin Élément Portfolio -->
+            
+
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/branding-1.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static 'assets/img/portfolio/branding-1.jpg' %}" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'portfolio-details' %}" title="En savoir plus" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Fin Élément Portfolio -->
+            
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/books-1.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static 'assets/img/portfolio/books-1.jpg' %}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'portfolio-details' %}" title="En savoir plus" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Fin Élément Portfolio -->
+            
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/app-2.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static 'assets/img/portfolio/app-2.jpg' %}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'portfolio-details' %}" title="En savoir plus" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Fin Élément Portfolio -->
+            
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/product-2.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static 'assets/img/portfolio/product-2.jpg' %}" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'portfolio-details' %}" title="En savoir plus" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Fin Élément Portfolio -->
+            
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/branding-2.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static 'assets/img/portfolio/branding-2.jpg' %}" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'portfolio-details' %}" title="En savoir plus" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Fin Élément Portfolio -->
+            
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/books-2.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static 'assets/img/portfolio/books-2.jpg' %}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'portfolio-details' %}" title="En savoir plus" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Fin Élément Portfolio -->
+            
+
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/app-3.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static 'assets/img/portfolio/app-3.jpg' %}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'portfolio-details' %}" title="En savoir plus" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Fin Élément Portfolio -->
+            
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/product-3.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static 'assets/img/portfolio/product-3.jpg' %}" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'portfolio-details' %}" title="En savoir plus" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Fin Élément Portfolio -->
+            
+
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/branding-3.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static 'assets/img/portfolio/branding-3.jpg' %}" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'portfolio-details' %}" title="En savoir plus" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Fin Élément Portfolio -->
+            
+            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/books-3.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static 'assets/img/portfolio/books-3.jpg' %}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'portfolio-details' %}" title="En savoir plus" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Fin Élément Portfolio -->            
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Section Témoignages -->
+<section id="testimonials" class="testimonials section">
+  <!-- Titre de la section -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Témoignages</h2>
+    <div><span>Ce que disent nos</span> <span class="description-title">Clients</span></div>
+  </div><!-- Fin du titre de la section -->
+
+  <div class="container">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonial-item">
+         <!--  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt=""> -->
+          <h3>Alpha Technologies</h3>
+          <h4>Directeur Général</h4>
+          <div class="stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <p>
+            <i class="bi bi-quote quote-icon-left"></i>
+            <span>SETES SARL a été un partenaire fiable pour nos besoins en systèmes de sécurité et de maintenance. Leur expertise et leur professionnalisme ont été déterminants dans la réussite de notre projet.</span>
+            <i class="bi bi-quote quote-icon-right"></i>
+          </p>
+        </div>
+      </div><!-- Fin élément témoignage -->
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="testimonial-item">
+          <!-- <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt=""> -->
+          <h3>Global Energy Solutions</h3>
+          <h4>Responsable des Opérations</h4>
+          <div class="stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <p>
+            <i class="bi bi-quote quote-icon-left"></i>
+            <span>Nous avons confié à SETES SARL la fourniture et l'installation de nos systèmes solaires photovoltaïques. Leurs solutions ont parfaitement répondu à nos exigences de qualité et d'efficacité.</span>
+            <i class="bi bi-quote quote-icon-right"></i>
+          </p>
+        </div>
+      </div><!-- Fin élément témoignage -->
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="testimonial-item">
+          <!-- <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt=""> -->
+          <h3>TechnoComm</h3>
+          <h4>Chef de Projet</h4>
+          <div class="stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <p>
+            <i class="bi bi-quote quote-icon-left"></i>
+            <span>Grâce à l'expertise de SETES SARL, nous avons pu moderniser nos infrastructures télécoms avec des solutions innovantes et performantes. Leur équipe a su répondre à toutes nos attentes.</span>
+            <i class="bi bi-quote quote-icon-right"></i>
+          </p>
+        </div>
+      </div><!-- Fin élément témoignage -->
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="testimonial-item">
+          <!-- <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt=""> -->
+          <h3>SecureTech</h3>
+          <h4>Directeur de la Sécurité</h4>
+          <div class="stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <p>
+            <i class="bi bi-quote quote-icon-left"></i>
+            <span>SETES SARL nous a fourni des systèmes de surveillance et de protection incendie de haute qualité. Leur service après-vente est impeccable et toujours disponible.</span>
+            <i class="bi bi-quote quote-icon-right"></i>
+          </p>
+        </div>
+      </div><!-- Fin élément témoignage -->
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
+        <div class="testimonial-item">
+          <!-- <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt=""> -->
+          <h3>DataConnect</h3>
+          <h4>Ingénieur Réseaux</h4>
+          <div class="stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <p>
+            <i class="bi bi-quote quote-icon-left"></i>
+            <span>SETES SARL a joué un rôle clé dans l'optimisation de nos réseaux télécoms avec leur expertise en maintenance et audit. Nous sommes ravis des résultats obtenus.</span>
+            <i class="bi bi-quote quote-icon-right"></i>
+          </p>
+        </div>
+      </div><!-- Fin élément témoignage -->
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="600">
+        <div class="testimonial-item">
+          <!-- <img src="assets/img/testimonials/testimonials-6.jpg" class="testimonial-img" alt=""> -->
+          <h3>SoftInTech</h3>
+          <h4>Directeur Technique</h4>
+          <div class="stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <p>
+            <i class="bi bi-quote quote-icon-left"></i>
+            <span>Le développement de solutions numériques par SETES SARL a grandement contribué à la modernisation de nos systèmes de gestion. Leur approche innovante nous a permis de gagner en efficacité.</span>
+            <i class="bi bi-quote quote-icon-right"></i>
+          </p>
+        </div>
+      </div><!-- Fin élément témoignage -->
+
+    </div>
+  </div>
+</section><!-- /Section Témoignages -->
+
+
+
+    <!-- Section Équipe -->
+<section id="team" class="team section">
+
+  <!-- Titre de la section -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Notre Équipe</h2>
+    <div><span>Rencontrez Notre</span> <span class="description-title">Équipe</span></div>
+  </div><!-- Fin du titre de la section -->
+
+  <div class="container">
+
+    <div class="row gy-4">
+
+      <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="member">
+          <img src="{% static 'assets/img/team/team-1.jpg' %}" class="img-fluid" alt="">
+          <div class="member-info">
+            <div class="member-info-content">
+              <h4>Issaka Hama Barhamou</h4>
+              <span>Directeur Général</span>
+            </div>
+            <div class="social">
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div><!-- Fin membre de l'équipe -->
+
+      <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="member">
+          <img src="{% static 'assets/img/team/team-2.jpg' %}" class="img-fluid" alt="">
+          <div class="member-info">
+            <div class="member-info-content">
+              <h4>Fatoumata Diallo</h4>
+              <span>Responsable des Opérations</span>
+            </div>
+            <div class="social">
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div><!-- Fin membre de l'équipe -->
+
+      <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="member">
+          <img src="{% static 'assets/img/team/team-3.jpg' %}" class="img-fluid" alt="">
+          <div class="member-info">
+            <div class="member-info-content">
+              <h4>Mohamed Traoré</h4>
+              <span>Directeur Technique</span>
+            </div>
+            <div class="social">
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div><!-- Fin membre de l'équipe -->
+
+      <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="member">
+          <img src="{% static 'assets/img/team/team-4.jpg' %}" class="img-fluid" alt="">
+          <div class="member-info">
+            <div class="member-info-content">
+              <h4>Aïcha Sidibé</h4>
+              <span>Responsable Administratif et Financier</span>
+            </div>
+            <div class="social">
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div><!-- Fin membre de l'équipe -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Section Équipe -->
+
+
+
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact section">
+      <!-- Titre de la section -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <div><span>Besoin d'aide ?</span> <span class="description-title">Contactez-nous</span></div>
+      </div><!-- Fin du titre de la section -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-6">
+
+            <div class="row gy-4">
+              <div class="col-md-6">
+                <div class="info-item" data-aos="fade" data-aos-delay="200">
+                  <i class="bi bi-geo-alt"></i>
+                  <h3>Adresse</h3>
+                  <p>Francophonie</p>
+                  <p>Niamey, Niger</p>
+                </div>
+              </div><!-- Fin Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item" data-aos="fade" data-aos-delay="300">
+                  <i class="bi bi-telephone"></i>
+                  <h3>Appelez-nous</h3>
+                  <p>+227 90 08 91 91</p>
+                  <p>+227 94 94 01 28</p>
+                  <p>+227 97 55 78 52</p>
+                  <p>+227 94 00 05 74</p>
+                  <p>+227 98 68 88 00</p>
+                  <p>+227 94 00 03 90</p>
+                </div>
+              </div><!-- Fin Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item" data-aos="fade" data-aos-delay="400">
+                  <i class="bi bi-envelope"></i>
+                  <h3>Envoyez-nous un email</h3>
+                  <p>info@setes.com</p>
+                  <p>contact@setes.com</p>
+                </div>
+              </div><!-- Fin Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item" data-aos="fade" data-aos-delay="500">
+                  <i class="bi bi-clock"></i>
+                  <h3>Horaires d'ouverture</h3>
+                  <p>Lundi - Vendredi</p>
+                  <p>9:00 - 18:00</p>
+                </div>
+              </div><!-- Fin Info Item -->
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <form action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Votre nom" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Votre email" required="">
+                </div>
+
+                <div class="col-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Objet" required="">
+                </div>
+
+                <div class="col-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-12 text-center">
+                  <div class="loading">Chargement...</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Votre message a été envoyé. Merci !</div>
+
+                  <button type="submit">Envoyer le message</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- Fin du formulaire de contact -->
+
+        </div>
+
+      </div>
+    </section><!-- /Section Contact -->
+
+  </main>
+
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">SETES SARL</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Avenue de l'Indépendance</p>
+            <p>Niamey, Niger</p>
+            <p class="mt-3"><strong>Téléphone :</strong> <span>+227 20 20 00 00</span></p>
+            <p><strong>Email :</strong> <span>info@setes-sarl.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Liens Utiles</h4>
+          <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Conditions d'utilisation</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Nos Services</h4>
+          <ul>
+            <li><a href="#">Énergie & Télécommunication</a></li>
+            <li><a href="#">Solutions Numériques</a></li>
+            <li><a href="#">Sécurité & Maintenance</a></li>
+            <li><a href="#">Audit et Conseil</a></li>
+            <li><a href="#">Systèmes Solaires</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Notre Newsletter</h4>
+          <p>Abonnez-vous à notre newsletter pour recevoir les dernières nouvelles et offres de SETES SARL.</p>
+          <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="S'abonner"></div>
+            <div class="loading">Chargement...</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Votre demande d'abonnement a été envoyée. Merci !</div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© Copyright <strong class="px-1 sitename">SETES SARL</strong>. Tous droits réservés.</p>
+      <div class="credits">
+        Conçu par <a href="https://www.linkedin.com/in/barhamou-issaka-hama-90047b179/">ISSAKA HAMA Barhamou</a>
+      </div>
+    </div>
+ </footer>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+</body>
+
+</html>
