@@ -16,7 +16,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -27,6 +27,59 @@
 
     <!-- Main CSS File -->
     <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+    <style>
+        /* Main color updates */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #f5f5f5;
+        }
+
+        /* Header background with dark blue color */
+        .header {
+            background: #0a1a2e;
+        }
+
+        .logo h1.sitename {
+            font-size: 28px;
+            font-weight: 700;
+            color: #f5f5f5;
+        }
+
+        /* Navbar links */
+        #navmenu ul li a {
+            color: #f5f5f5;
+        }
+
+        #navmenu ul li a:hover,
+        #navmenu ul li a.active {
+            color: #5ac0e5;
+        }
+
+        /* Footer background and text color */
+        .footer {
+            background: #0a1a2e;
+            color: #f5f5f5;
+        }
+
+        .footer a {
+            color: #5ac0e5;
+        }
+
+        .footer a:hover {
+            color: #f5f5f5;
+        }
+
+        .footer .social-links a {
+            background: #5ac0e5;
+            color: #0a1a2e;
+        }
+
+        .footer .social-links a:hover {
+            background: #f5f5f5;
+            color: #0a1a2e;
+        }
+    </style>
 </head>
 
 <body class="{% block body_class %}index-page{% endblock %}">
@@ -35,7 +88,8 @@
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
             <a href="#" class="logo d-flex align-items-center">
-                <h1 class="sitename">SETES SARL</h1>
+                <img src="{% static 'assets/img/logo.jpeg' %}" alt="Logo SETES" style="height: 50px; margin-right: 10px;">
+                <h1 class="sitename" style="margin: 0;">SETES SARL</h1>
             </a>
 
             <nav id="navmenu" class="navmenu">
@@ -51,6 +105,7 @@
             </nav>
         </div>
     </header>
+
 
     <!-- Main Content -->
     <main class="main">
