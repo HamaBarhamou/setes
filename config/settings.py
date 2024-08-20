@@ -150,3 +150,6 @@ else:
 
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS", cast=Csv())
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
