@@ -150,4 +150,3 @@ else:
 
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS", cast=Csv())
-CSRF_TRUSTED_ORIGINS = ["3vt-passionate-faraday.circumeo-apps.net"]
