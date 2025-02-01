@@ -165,7 +165,7 @@ else:
     #ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv(), default='setes.onrender.com')
     # settings.py
     ALLOWED_HOSTS = [
-        'setes.onrender.com',
+        'https://www.setes.onrender.com',
         'localhost',
         '127.0.0.1'
     ]
