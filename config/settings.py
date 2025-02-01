@@ -161,7 +161,7 @@ else:
     EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
 
 
-    ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
+    ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv(), default='setes.onrender.com')
     CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS", cast=Csv())
 
 
