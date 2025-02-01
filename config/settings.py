@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -161,7 +162,13 @@ else:
     EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
 
 
-    ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv(), default='setes.onrender.com')
+    #ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv(), default='setes.onrender.com')
+    # settings.py
+    ALLOWED_HOSTS = [
+        'setes.onrender.com',
+        'localhost',
+        '127.0.0.1'
+    ]
     CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS", cast=Csv())
 
 
