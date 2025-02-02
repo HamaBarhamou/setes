@@ -30,7 +30,14 @@ SECRET_KEY = os.environ.get(
 #SECRET_KEY = 'django-insecure-l6r$_l*h4i3v1q1+l_zb!$v5h@3rf!6vujuyp*9ldw2)aimbn6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = 'RENDER' not in os.environ
+
+# https://docs.djangoproject.com/en/3.0/ref/settings/#allowed-hosts
+ALLOWED_HOSTS = []
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 
 # Application definition
@@ -81,7 +88,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 
 
-if "RENDER" not in os.environ:
+if DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -178,7 +185,7 @@ else:
 
     #ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv(), default='setes.onrender.com')
     # settings.py
-    ALLOWED_HOSTS = []
+
     CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS", cast=Csv())
 
 
