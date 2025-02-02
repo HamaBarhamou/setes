@@ -172,7 +172,7 @@ if not DEBUG:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-if DEBUG:
+""" if DEBUG:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 else:
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
@@ -186,7 +186,7 @@ else:
     #ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv(), default='setes.onrender.com')
     # settings.py
 
-    CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS", cast=Csv())
+    CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS", cast=Csv()) """
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
