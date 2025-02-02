@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 from decouple import config, Csv
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,12 +23,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-l6r$_l*h4i3v1q1+l_zb!$v5h@3rf!6vujuyp*9ldw2)aimbn6'
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY",
+    default="django-insecure-l6r$_l*h4i3v1q1+l_zb!$v5h@3rf!6vujuyp*9ldw2)aimbn6",
+)
+#SECRET_KEY = 'django-insecure-l6r$_l*h4i3v1q1+l_zb!$v5h@3rf!6vujuyp*9ldw2)aimbn6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -43,13 +46,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -76,12 +79,23 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
+
+
+if "RENDER" not in os.environ:
+    DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+else:
+    # Replace the SQLite DATABASES configuration with PostgreSQL:
+    DATABASES = {
+        "default": dj_database_url.config(
+            default=os.environ.get("DATABASE_URL"), conn_max_age=600
+        )
+    }
+
 
 """ if DEBUG:
     DATABASES = {
@@ -164,11 +178,7 @@ else:
 
     #ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv(), default='setes.onrender.com')
     # settings.py
-    ALLOWED_HOSTS = [
-        'https://setes.onrender.com/',
-        'localhost',
-        '127.0.0.1'
-    ]
+    ALLOWED_HOSTS = []
     CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS", cast=Csv())
 
 
