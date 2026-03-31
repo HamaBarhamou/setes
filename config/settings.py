@@ -142,11 +142,6 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 if not DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-    STORAGES = {
-        "staticfiles": {
-            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-        },
-    }
 
 # Media files (Cloudinary)
 CLOUDINARY_STORAGE = {
@@ -158,7 +153,20 @@ CLOUDINARY_STORAGE = {
 }
 
 MEDIA_URL = "/media/"
-DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+
+# STORAGES (Django 6.x) - Cloudinary pour les media, WhiteNoise pour les static en prod
+STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
+    "staticfiles": {
+        "BACKEND": (
+            "whitenoise.storage.CompressedManifestStaticFilesStorage"
+            if not DEBUG
+            else "django.contrib.staticfiles.storage.StaticFilesStorage"
+        ),
+    },
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
