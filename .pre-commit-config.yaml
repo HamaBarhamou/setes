@@ -1,0 +1,15 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: 25.1.0
+    hooks:
+      - id: black
+        language_version: python3
+
+  - repo: local
+    hooks:
+      - id: django-tests
+        name: Django tests
+        entry: bash -c 'source venv/bin/activate && python3 manage.py test core --verbosity=1 --settings=config.settings_test'
+        language: system
+        pass_filenames: false
+        always_run: true

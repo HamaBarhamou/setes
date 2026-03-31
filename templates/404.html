@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Page non trouvee - SETES SARL{% endblock %}
+
+{% block content %}
+<div class="page-title dark-background">
+    <div class="container">
+        <h1>Page non trouvee</h1>
+        <nav class="breadcrumbs">
+            <ol>
+                <li><a href="{% url 'home' %}">Accueil</a></li>
+                <li class="current">Erreur 404</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<section class="section" style="min-height: 40vh;">
+    <div class="container text-center py-5">
+        <h2 class="display-1 fw-bold" style="color: #0a1a2e;">404</h2>
+        <p class="lead" style="color: #333;">La page que vous recherchez n'existe pas ou a ete deplacee.</p>
+        <a href="{% url 'home' %}" class="btn btn-primary mt-3" style="background-color: #0a1a2e; border-color: #0a1a2e;">
+            <i class="bi bi-house-door"></i> Retour a l'accueil
+        </a>
+    </div>
+</section>
+{% endblock %}

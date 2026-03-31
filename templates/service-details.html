@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}{{ service.title }} - SETES SARL{% endblock %}
+{% block meta_description %}{{ service.description }}{% endblock %}
+{% block og_title %}{{ service.title }} - SETES SARL{% endblock %}
+{% block og_description %}{{ service.description }}{% endblock %}
 
 {% block content %}
 <!-- Page Title -->
@@ -22,8 +25,8 @@
         <div class="row gy-4">
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="services-list">
-                    {% for key, value in services.items %}
-                        <a href="{% url 'service-details' key %}" class="{% if key == service.slug %}active{% endif %}">{{ value.title }}</a>
+                    {% for s in services %}
+                        <a href="{% url 'service-details' s.slug %}" class="{% if s.slug == service.slug %}active{% endif %}">{{ s.title }}</a>
                     {% endfor %}
                 </div>
 
@@ -33,7 +36,7 @@
 
             <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
                 <!-- <img src="{% static 'assets/img/services.jpg' %}" alt="{{ service.title }}" class="img-fluid services-img"> -->
-                <img src="{% static service.image %}" alt="{{ service.title }}" class="img-fluid services-img">
+                <img src="{% static service.image %}" alt="{{ service.title }}" class="img-fluid services-img" loading="lazy" decoding="async">
                 <h3>{{ service.title }}</h3>
                 <p>{{ service.details }}</p>
                 <ul>

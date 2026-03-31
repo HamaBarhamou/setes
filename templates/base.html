@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>{% block title %}SETES SARL - Énergies, Télécommunication et Services{% endblock %}</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="{% block meta_description %}SETES SARL - Société nigérienne spécialisée dans les solutions énergétiques, télécommunications, sécurité et services techniques à Niamey, Niger.{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}SETES, énergie solaire, télécommunications, sécurité, Niger, Niamey, groupes électrogènes, pylônes, solutions numériques{% endblock %}">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{% block og_title %}SETES SARL - Énergies, Télécommunication et Services{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Solutions énergétiques, télécommunications et services techniques au Niger{% endblock %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://setes.net{{ request.path }}">
+    <meta property="og:locale" content="fr_NE">
+
+    <!-- Preload hero image -->
+    <link rel="preload" as="image" href="{% static 'assets/img/hero-carousel/hero-carousel-1.jpg' %}">
 
     <!-- Favicons -->
     <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
@@ -27,6 +37,26 @@
 
     <!-- Main CSS File -->
     <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "SETES SARL",
+      "description": "Solutions énergétiques, télécommunications et services techniques au Niger",
+      "url": "https://setes.net",
+      "telephone": "+227 94 94 01 28",
+      "email": "info@setes.net",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Francophonie",
+        "addressLocality": "Niamey",
+        "addressCountry": "NE"
+      },
+      "openingHours": "Mo-Fr 09:00-18:00"
+    }
+    </script>
 
     <style>
         /* Main color updates */
@@ -101,7 +131,7 @@
                     <li><a href="{% url 'home' %}#team">Équipe</a></li>
                     <li><a href="{% url 'home' %}#contact">Contact</a></li>
                 </ul>
-                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Ouvrir le menu de navigation"></i>
             </nav>
         </div>
     </header>
@@ -129,21 +159,21 @@
                 <p><strong>Email :</strong> <span>info@setes.net</span></p>
               </div>
               <div class="social-links d-flex mt-4">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
               </div>
             </div>
     
             <div class="col-lg-2 col-md-3 footer-links">
               <h4>Liens Utiles</h4>
               <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">À propos</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Conditions d'utilisation</a></li>
-                <li><a href="#">Politique de confidentialité</a></li>
+                <li><a href="{% url 'home' %}#hero">Accueil</a></li>
+                <li><a href="{% url 'home' %}#about">À propos</a></li>
+                <li><a href="{% url 'home' %}#services">Services</a></li>
+                <li><a href="{% url 'home' %}#portfolio">Réalisations</a></li>
+                <li><a href="{% url 'home' %}#contact">Contact</a></li>
               </ul>
             </div>
     
@@ -163,8 +193,9 @@
             <div class="col-lg-4 col-md-12 footer-newsletter">
               <h4>Notre Newsletter</h4>
               <p>Abonnez-vous à notre newsletter pour recevoir les dernières nouvelles et offres de SETES SARL.</p>
-              <form action="forms/newsletter.php" method="post" class="php-email-form">
-                <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="S'abonner"></div>
+              <form action="{% url 'newsletter-subscribe' %}" method="post" class="django-form">
+                {% csrf_token %}
+                <div class="newsletter-form"><input type="email" name="email" placeholder="Votre email" required><input type="submit" value="S'abonner"></div>
                 <div class="loading">Chargement...</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Votre demande d'abonnement a été envoyée. Merci !</div>
@@ -190,7 +221,7 @@
 
   <!-- Vendor JS Files -->
   <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/js/forms.js' %}"></script>
   <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
   <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
   <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
