@@ -35,8 +35,11 @@
             </div>
 
             <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-                <!-- <img src="{% static 'assets/img/services.jpg' %}" alt="{{ service.title }}" class="img-fluid services-img"> -->
-                <img src="{% static service.image %}" alt="{{ service.title }}" class="img-fluid services-img" loading="lazy" decoding="async">
+                {% if service.display_image %}
+                <img src="{{ service.display_image }}" alt="{{ service.title }}" class="img-fluid services-img" loading="lazy" decoding="async">
+                {% elif service.legacy_image %}
+                <img src="{% static service.legacy_image %}" alt="{{ service.title }}" class="img-fluid services-img" loading="lazy" decoding="async">
+                {% endif %}
                 <h3>{{ service.title }}</h3>
                 <p>{{ service.details }}</p>
                 <ul>

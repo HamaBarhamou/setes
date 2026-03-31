@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sitemaps",
+    "cloudinary_storage",
+    "cloudinary",
     "core.apps.CoreConfig",
 ]
 
@@ -145,6 +147,18 @@ if not DEBUG:
             "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
         },
     }
+
+# Media files (Cloudinary)
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": os.environ.get("CLOUDINARY_CLOUD_NAME", "dje0cbvit"),
+    "API_KEY": os.environ.get("CLOUDINARY_API_KEY", "263126543655227"),
+    "API_SECRET": os.environ.get(
+        "CLOUDINARY_API_SECRET", "PeY4QG7J5QMK2T0HV01LNmWmDho"
+    ),
+}
+
+MEDIA_URL = "/media/"
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

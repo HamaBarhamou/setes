@@ -7,11 +7,19 @@ class Service(models.Model):
     description = models.TextField()
     details = models.TextField()
     icon = models.CharField(max_length=50)
-    image = models.CharField(max_length=200)
+    image = models.ImageField(upload_to="services/", blank=True)
+    legacy_image = models.CharField(max_length=200, blank=True)
     order = models.PositiveIntegerField(default=0)
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    @property
+    def display_image(self):
+        """Retourne l'URL de l'image Cloudinary ou le chemin static legacy."""
+        if self.image:
+            return self.image.url
+        return None
 
     class Meta:
         ordering = ["order"]
@@ -43,11 +51,19 @@ class Testimonial(models.Model):
 class TeamMember(models.Model):
     name = models.CharField(max_length=200)
     role = models.CharField(max_length=200)
-    photo = models.CharField(max_length=200, blank=True)
+    photo = models.ImageField(upload_to="team/", blank=True)
+    legacy_photo = models.CharField(max_length=200, blank=True)
     order = models.PositiveIntegerField(default=0)
     is_active = models.BooleanField(default=True)
     linkedin_url = models.URLField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    @property
+    def display_photo(self):
+        """Retourne l'URL de la photo Cloudinary ou le chemin static legacy."""
+        if self.photo:
+            return self.photo.url
+        return None
 
     class Meta:
         ordering = ["order"]

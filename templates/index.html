@@ -433,8 +433,10 @@
       {% for member in team_members %}
       <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ forloop.counter }}00">
         <div class="member">
-          {% if member.photo %}
-          <img src="{% static member.photo %}" class="img-fluid" alt="{{ member.name }}">
+          {% if member.display_photo %}
+          <img src="{{ member.display_photo }}" class="img-fluid" alt="{{ member.name }}" loading="lazy" decoding="async">
+          {% elif member.legacy_photo %}
+          <img src="{% static member.legacy_photo %}" class="img-fluid" alt="{{ member.name }}" loading="lazy" decoding="async">
           {% endif %}
           <div class="member-info">
             <div class="member-info-content">

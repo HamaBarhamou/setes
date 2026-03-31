@@ -55,6 +55,7 @@ python3 manage.py createsuperuser
 | Backend           | Django 6.0.3, Python 3.12                |
 | Frontend          | Bootstrap 5, AOS, Swiper, GLightbox     |
 | Fichiers statiques| WhiteNoise (compression + cache)         |
+| Media (images)    | Cloudinary (gratuit 25GB)                |
 | BDD               | PostgreSQL Neon (gratuit) via DATABASE_URL |
 | Serveur prod      | Gunicorn                                 |
 | Deploiement       | Render.com (build.sh)                    |
@@ -67,6 +68,8 @@ python3 manage.py createsuperuser
 - `SECRET_KEY` via variable d'environnement
 - PostgreSQL Neon via `DATABASE_URL` (fichier `.env` en local)
 - `STORAGES` pour WhiteNoise (syntaxe Django 6.x)
+- Cloudinary pour les media (images uploadees via admin)
+- Les images existantes restent dans `static/` via les champs `legacy_image`/`legacy_photo`
 
 ## Routes
 
@@ -83,9 +86,9 @@ python3 manage.py createsuperuser
 
 ## Modeles (core/models.py)
 
-- **Service** : title, slug, description, details, icon, image, order, is_active
+- **Service** : title, slug, description, details, icon, image (Cloudinary), legacy_image (static), order, is_active
 - **Testimonial** : company_name, person_title, content, rating, order, is_active
-- **TeamMember** : name, role, photo, order, is_active, linkedin_url
+- **TeamMember** : name, role, photo (Cloudinary), legacy_photo (static), order, is_active, linkedin_url
 - **ContactMessage** : name, email, subject, message, is_read
 - **NewsletterSubscriber** : email, is_active
 
@@ -124,3 +127,6 @@ python3 manage.py createsuperuser
 - `SECRET_KEY` - cle secrete Django
 - `RENDER_EXTERNAL_HOSTNAME` - ajoute automatiquement aux ALLOWED_HOSTS
 - `DATABASE_URL` - **obligatoire** - URL PostgreSQL Neon (gratuit a vie)
+- `CLOUDINARY_CLOUD_NAME` - nom du cloud Cloudinary
+- `CLOUDINARY_API_KEY` - cle API Cloudinary
+- `CLOUDINARY_API_SECRET` - secret API Cloudinary

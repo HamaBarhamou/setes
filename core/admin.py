@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.html import format_html
 from .models import (
     ContactMessage,
     NewsletterSubscriber,
@@ -10,10 +11,42 @@ from .models import (
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ["title", "slug", "order", "is_active"]
+    list_display = ["title", "slug", "order", "is_active", "apercu_image"]
     list_editable = ["order", "is_active"]
     prepopulated_fields = {"slug": ("title",)}
     search_fields = ["title", "description"]
+    fieldsets = [
+        (
+            None,
+            {
+                "fields": (
+                    "title",
+                    "slug",
+                    "description",
+                    "details",
+                    "icon",
+                    "order",
+                    "is_active",
+                )
+            },
+        ),
+        (
+            "Image",
+            {
+                "fields": ("image", "legacy_image"),
+                "description": "Uploadez une image via Cloudinary. Le champ 'legacy' est pour les anciennes images statiques.",
+            },
+        ),
+    ]
+
+    def apercu_image(self, obj):
+        if obj.image:
+            return format_html(
+                '<img src="{}" style="height:40px;border-radius:4px;">', obj.image.url
+            )
+        return "-"
+
+    apercu_image.short_description = "Apercu"
 
 
 @admin.register(Testimonial)
@@ -24,8 +57,27 @@ class TestimonialAdmin(admin.ModelAdmin):
 
 @admin.register(TeamMember)
 class TeamMemberAdmin(admin.ModelAdmin):
-    list_display = ["name", "role", "order", "is_active"]
+    list_display = ["name", "role", "order", "is_active", "apercu_photo"]
     list_editable = ["order", "is_active"]
+    fieldsets = [
+        (None, {"fields": ("name", "role", "order", "is_active", "linkedin_url")}),
+        (
+            "Photo",
+            {
+                "fields": ("photo", "legacy_photo"),
+                "description": "Uploadez une photo via Cloudinary. Le champ 'legacy' est pour les anciennes photos statiques.",
+            },
+        ),
+    ]
+
+    def apercu_photo(self, obj):
+        if obj.photo:
+            return format_html(
+                '<img src="{}" style="height:40px;border-radius:50%;">', obj.photo.url
+            )
+        return "-"
+
+    apercu_photo.short_description = "Apercu"
 
 
 @admin.register(ContactMessage)

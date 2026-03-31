@@ -34,7 +34,7 @@ def _make_service(**kwargs):
         "description": "Description",
         "details": "Details",
         "icon": "bi-star",
-        "image": "assets/img/services/test.webp",
+        "legacy_image": "assets/img/services/test.webp",
         "order": 1,
     }
     defaults.update(kwargs)
@@ -57,7 +57,7 @@ def _make_team_member(**kwargs):
     defaults = {
         "name": "John Doe",
         "role": "Developer",
-        "photo": "assets/img/team/team-1.jpg",
+        "legacy_photo": "assets/img/team/team-1.jpg",
         "order": 1,
     }
     defaults.update(kwargs)
@@ -528,7 +528,9 @@ class AdminConfigTest(TestCase):
 
     def test_service_admin(self):
         ma = ServiceAdmin(Service, self.site)
-        self.assertEqual(ma.list_display, ["title", "slug", "order", "is_active"])
+        self.assertEqual(
+            ma.list_display, ["title", "slug", "order", "is_active", "apercu_image"]
+        )
         self.assertEqual(ma.list_editable, ["order", "is_active"])
         self.assertEqual(ma.prepopulated_fields, {"slug": ("title",)})
         self.assertEqual(ma.search_fields, ["title", "description"])
@@ -543,7 +545,9 @@ class AdminConfigTest(TestCase):
 
     def test_team_member_admin(self):
         ma = TeamMemberAdmin(TeamMember, self.site)
-        self.assertEqual(ma.list_display, ["name", "role", "order", "is_active"])
+        self.assertEqual(
+            ma.list_display, ["name", "role", "order", "is_active", "apercu_photo"]
+        )
         self.assertEqual(ma.list_editable, ["order", "is_active"])
 
     def test_contact_message_admin(self):
