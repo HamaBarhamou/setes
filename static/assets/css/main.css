@@ -12,43 +12,47 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --default-font: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Poppins", sans-serif;
 }
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #394047; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #428bca; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-}
-
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+/* SETES SARL Brand Colors */
 :root {
-  --nav-color: #ffffff;  /* The default color of the main navmenu links */
-  --nav-hover-color: #428bca; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #428bca; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --background-color: #ffffff;
+  --default-color: #3a3a3a;
+  --heading-color: #0a1a2e;
+  --accent-color: #00a8e8;
+  --accent-color-dark: #0078b4;
+  --secondary-color: #f0a500;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+  --dark-bg: #0a1a2e;
+  --dark-bg-light: #0f2440;
 }
 
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+/* Nav Menu Colors */
+:root {
+  --nav-color: #ffffff;
+  --nav-hover-color: #f0a500;
+  --nav-mobile-background-color: #ffffff;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-dropdown-color: #3a3a3a;
+  --nav-dropdown-hover-color: #00a8e8;
+}
+
+/* Color Presets */
 
 .light-background {
-  --background-color: #f9f9f9;
+  --background-color: #f4f8fb;
   --surface-color: #ffffff;
 }
 
 .dark-background {
-  --background-color: #060606;
-  --default-color: #ffffff;
+  --background-color: #0a1a2e;
+  --default-color: #e0e8f0;
   --heading-color: #ffffff;
-  --surface-color: #252525;
+  --surface-color: #0f2440;
   --contrast-color: #ffffff;
 }
 
@@ -87,8 +91,9 @@ h6 {
   font-family: var(--heading-font);
 }
 
-/* PHP Email Form Messages
+/* Form Messages (django-form & php-email-form)
 ------------------------------*/
+.django-form .error-message,
 .php-email-form .error-message {
   display: none;
   background: #df1529;
@@ -97,8 +102,10 @@ h6 {
   padding: 15px;
   margin-bottom: 24px;
   font-weight: 600;
+  border-radius: 8px;
 }
 
+.django-form .sent-message,
 .php-email-form .sent-message {
   display: none;
   color: #ffffff;
@@ -107,16 +114,20 @@ h6 {
   padding: 15px;
   margin-bottom: 24px;
   font-weight: 600;
+  border-radius: 8px;
 }
 
+.django-form .loading,
 .php-email-form .loading {
   display: none;
   background: var(--surface-color);
   text-align: center;
   padding: 15px;
   margin-bottom: 24px;
+  border-radius: 8px;
 }
 
+.django-form .loading:before,
 .php-email-form .loading:before {
   content: "";
   display: inline-block;
@@ -222,7 +233,7 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(0, 0, 0, 0);
+  --background-color: rgba(10, 26, 46, 0);
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
@@ -237,25 +248,29 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 32px;
-  margin-right: 8px;
+  max-height: 44px;
+  margin-right: 10px;
+  border-radius: 6px;
 }
 
 .header .logo h1 {
-  font-size: 30px;
+  font-size: 26px;
   margin: 0;
   font-weight: 700;
-  color: var(--heading-color);
+  color: #ffffff;
+  letter-spacing: 1px;
 }
 
 .scrolled .header {
-  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: rgba(0, 0, 0, 0.85);
+  --background-color: rgba(10, 26, 46, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 /*--------------------------------------------------------------
@@ -501,14 +516,17 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background: linear-gradient(180deg, var(--dark-bg) 0%, #061222 100%);
+  --background-color: transparent;
+  --default-color: #c0cdd8;
+  --heading-color: #ffffff;
   font-size: 14px;
   position: relative;
 }
 
 .footer .footer-top {
-  padding-top: 50px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  padding-top: 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer .footer-about .logo {
@@ -541,16 +559,18 @@ h6 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  border: none;
   font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: #ffffff;
+  background: rgba(0, 168, 232, 0.2);
   margin-right: 10px;
-  transition: 0.3s;
+  transition: all 0.3s;
 }
 
 .footer .social-links a:hover {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
+  background: var(--secondary-color);
+  color: var(--dark-bg);
+  transform: translateY(-3px);
 }
 
 .footer h4 {
@@ -587,13 +607,15 @@ h6 {
 }
 
 .footer .footer-links ul a {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: #9aabb8;
   display: inline-block;
   line-height: 1;
+  transition: all 0.3s;
 }
 
 .footer .footer-links ul a:hover {
-  color: var(--accent-color);
+  color: var(--secondary-color);
+  padding-left: 5px;
 }
 
 .footer .footer-contact p {
@@ -630,17 +652,19 @@ h6 {
 
 .footer .footer-newsletter .newsletter-form input[type=submit] {
   border: 0;
-  font-size: 16px;
-  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0 24px;
   margin: -7px -8px -7px 0;
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  transition: 0.3s;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-color-dark));
+  color: #ffffff;
+  transition: all 0.3s;
   border-radius: 0 4px 4px 0;
 }
 
 .footer .footer-newsletter .newsletter-form input[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background: var(--secondary-color);
+  color: var(--dark-bg);
 }
 
 .footer .copyright {
@@ -702,22 +726,25 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 99999;
-  background-color: var(--accent-color);
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-color-dark));
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   transition: all 0.4s;
+  box-shadow: 0 4px 12px rgba(0, 168, 232, 0.3);
 }
 
 .scroll-top i {
   font-size: 24px;
-  color: var(--contrast-color);
+  color: #ffffff;
   line-height: 0;
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  color: var(--contrast-color);
+  background: var(--secondary-color);
+  color: var(--dark-bg);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(240, 165, 0, 0.3);
 }
 
 .scroll-top.active {
@@ -738,9 +765,9 @@ h6 {
 # Global Page Titles & Breadcrumbs
 --------------------------------------------------------------*/
 .page-title {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  padding: 120px 0;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-bg-light) 100%);
+  padding: 120px 0 60px;
   text-align: center;
   position: relative;
 }
@@ -804,11 +831,11 @@ section,
 
 .section-title h2 {
   font-size: 13px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   font-weight: 700;
-  padding: 8px 20px;
+  padding: 8px 24px;
   margin: 0;
-  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  background: linear-gradient(135deg, rgba(0, 168, 232, 0.1), rgba(240, 165, 0, 0.1));
   color: var(--accent-color);
   display: inline-block;
   text-transform: uppercase;
@@ -818,14 +845,26 @@ section,
 
 .section-title div {
   color: var(--heading-color);
-  margin: 10px 0 0 0;
-  font-size: 32px;
-  font-weight: 700;
+  margin: 15px 0 0 0;
+  font-size: 34px;
+  font-weight: 800;
   font-family: var(--heading-font);
 }
 
 .section-title div .description-title {
   color: var(--accent-color);
+  position: relative;
+}
+
+.section-title div .description-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+  border-radius: 2px;
 }
 
 /*--------------------------------------------------------------
@@ -840,7 +879,7 @@ section,
   min-height: 100vh;
   padding: 0;
   margin: 0;
-  background-color: var(--background-color);
+  background-color: var(--dark-bg);
   position: relative;
 }
 
@@ -863,19 +902,12 @@ section,
   overflow: hidden;
 }
 
-.hero .carousel-item:before {
+.hero .carousel-item::before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  background: linear-gradient(135deg, rgba(10, 26, 46, 0.85) 0%, rgba(0, 168, 232, 0.3) 100%);
   position: absolute;
   inset: 0;
   z-index: 2;
-}
-
-.hero .carousel-item::before {
-  content: "";
-  background-color: color-mix(in srgb, var(--background-color), transparent 30%);
-  position: absolute;
-  inset: 0;
 }
 
 .hero .carousel-container {
@@ -886,50 +918,67 @@ section,
   align-items: center;
   flex-direction: column;
   z-index: 3;
+  text-align: center;
 }
 
 .hero h2 {
-  margin-bottom: 30px;
-  font-size: 48px;
-  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 52px;
+  font-weight: 800;
+  color: #ffffff;
   animation: fadeInDown 1s both;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  line-height: 1.15;
+}
+
+.hero h2 span {
+  color: var(--secondary-color);
 }
 
 @media (max-width: 768px) {
   .hero h2 {
-    font-size: 30px;
+    font-size: 28px;
   }
 }
 
 .hero p {
   animation: fadeInDown 1s both 0.2s;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  max-width: 650px;
 }
 
 @media (min-width: 1024px) {
 
   .hero h2,
   .hero p {
-    max-width: 60%;
+    max-width: 65%;
   }
 }
 
 .hero .btn-get-started {
-  color: var(--contrast-color);
-  background: var(--accent-color);
+  color: var(--dark-bg);
+  background: var(--secondary-color);
   font-family: var(--heading-font);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 15px;
   letter-spacing: 1px;
   display: inline-block;
-  padding: 8px 32px;
-  border-radius: 4px;
-  transition: 0.4s;
+  padding: 14px 40px;
+  border-radius: 50px;
+  transition: all 0.4s;
   margin: 10px;
   animation: fadeInUp 1s both 0.4s;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(240, 165, 0, 0.4);
 }
 
 .hero .btn-get-started:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background: #ffffff;
+  color: var(--dark-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(240, 165, 0, 0.5);
 }
 
 .hero .carousel-control-prev,
@@ -960,8 +1009,22 @@ section,
 .hero .carousel-control-next-icon,
 .hero .carousel-control-prev-icon {
   background: none;
-  font-size: 32px;
+  font-size: 36px;
   line-height: 1;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  transition: 0.3s;
+}
+
+.hero .carousel-control-next-icon:hover,
+.hero .carousel-control-prev-icon:hover {
+  background-color: var(--secondary-color);
 }
 
 .hero .carousel-indicators {
@@ -999,9 +1062,27 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+.about {
+  padding: 80px 0;
+}
+
 .about .content h3 {
   font-size: 2rem;
   font-weight: 700;
+  color: var(--dark-bg);
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.about .content h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+  border-radius: 2px;
 }
 
 .about .content ul {
@@ -1012,28 +1093,54 @@ section,
 .about .content ul li {
   display: flex;
   align-items: flex-start;
-  margin-top: 40px;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 12px;
+  transition: all 0.3s;
+  background: #f8fbfe;
+  border: 1px solid rgba(0, 168, 232, 0.1);
+}
+
+.about .content ul li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 168, 232, 0.1);
+  border-color: rgba(0, 168, 232, 0.2);
 }
 
 .about .content ul i {
   flex-shrink: 0;
-  font-size: 48px;
+  font-size: 40px;
   color: var(--accent-color);
   margin-right: 20px;
   line-height: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0, 168, 232, 0.1), rgba(240, 165, 0, 0.1));
+  border-radius: 12px;
 }
 
 .about .content ul h5 {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
+  color: var(--dark-bg);
 }
 
 .about .content ul p {
-  font-size: 15px;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 0;
 }
 
 .about .content p:last-child {
   margin-bottom: 0;
+}
+
+.about .position-relative img {
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(10, 26, 46, 0.15);
 }
 
 .about .pulsating-play-btn {
@@ -1045,43 +1152,104 @@ section,
 /*--------------------------------------------------------------
 # Stats Section
 --------------------------------------------------------------*/
+.stats {
+  padding: 60px 0;
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-bg-light) 100%);
+  --background-color: transparent;
+  --default-color: #e0e8f0;
+  --heading-color: #ffffff;
+}
+
 .stats .stats-item {
   padding: 30px;
   width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.stats .stats-item::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.stats .row > div:last-child .stats-item::after {
+  display: none;
 }
 
 .stats .stats-item i {
-  color: var(--accent-color);
+  color: var(--secondary-color);
   display: block;
   font-size: 44px;
-  float: left;
+  float: none;
   line-height: 0;
+  margin-bottom: 20px;
 }
 
 .stats .stats-item .purecounter {
-  color: var(--heading-color);
+  color: #ffffff;
   font-size: 48px;
   line-height: 40px;
   display: block;
   font-weight: 700;
-  margin-left: 60px;
+  margin-left: 0;
 }
 
 .stats .stats-item p {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  color: rgba(255, 255, 255, 0.6);
   padding: 15px 0 0 0;
-  margin: 0 0 0 60px;
+  margin: 0;
   font-family: var(--heading-font);
   font-size: 14px;
+}
+
+.stats .stats-item p strong {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
+.services {
+  padding: 80px 0;
+}
+
 .services .service-item {
   position: relative;
   height: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 0;
+  padding: 35px 25px;
+  background: var(--surface-color);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 168, 232, 0.08);
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.services .service-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.services .service-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(10, 26, 46, 0.12);
+  border-color: transparent;
+}
+
+.services .service-item:hover::before {
+  opacity: 1;
 }
 
 .services .service-item .icon {
@@ -1090,45 +1258,57 @@ section,
 
 .services .service-item .icon i {
   color: var(--accent-color);
-  font-size: 40px;
+  font-size: 44px;
   line-height: 0;
   transition: 0.3s;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0, 168, 232, 0.1), rgba(0, 168, 232, 0.05));
+  border-radius: 14px;
 }
 
 .services .service-item:hover .icon i {
-  color: var(--accent-color);
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-color-dark));
+  color: #ffffff;
 }
 
 .services .service-item .title {
   color: var(--heading-color);
   font-weight: 700;
-  margin-bottom: 10px;
-  font-size: 20px;
+  margin-bottom: 12px;
+  font-size: 19px;
   transition: 0.3s;
 }
 
 .services .service-item .description {
-  font-size: 15px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  margin-bottom: 10px;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.7;
 }
 
 .services .service-item .readmore {
   display: flex;
   align-items: center;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  color: var(--accent-color);
   transition: 0.3s;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 14px;
 }
 
 .services .service-item .readmore i {
   margin-left: 8px;
+  transition: transform 0.3s;
 }
 
-.services .service-item:hover .title,
-.services .service-item:hover .readmore,
-.services .service-item:hover .icon i {
+.services .service-item:hover .readmore i {
+  transform: translateX(5px);
+}
+
+.services .service-item:hover .title {
   color: var(--accent-color);
 }
 
@@ -1136,7 +1316,7 @@ section,
 # Call To Action Section
 --------------------------------------------------------------*/
 .call-to-action {
-  padding: 100px 0;
+  padding: 120px 0;
   position: relative;
   clip-path: inset(0);
 }
@@ -1152,9 +1332,9 @@ section,
   z-index: 1;
 }
 
-.call-to-action:before {
+.call-to-action::before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  background: linear-gradient(135deg, rgba(10, 26, 46, 0.9) 0%, rgba(0, 168, 232, 0.6) 100%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -1166,32 +1346,43 @@ section,
 }
 
 .call-to-action h3 {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--default-color);
+  font-size: 34px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
 }
 
 .call-to-action p {
-  color: var(--default-color);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 17px;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.7;
 }
 
 .call-to-action .cta-btn {
   font-family: var(--heading-font);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
   display: inline-block;
-  padding: 12px 40px;
-  border-radius: 5px;
-  transition: 0.5s;
+  padding: 14px 44px;
+  border-radius: 50px;
+  transition: all 0.4s;
   margin: 10px;
-  border: 2px solid var(--contrast-color);
-  color: var(--contrast-color);
+  background: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+  color: var(--dark-bg);
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(240, 165, 0, 0.3);
 }
 
 .call-to-action .cta-btn:hover {
-  background: var(--accent-color);
-  border: 2px solid var(--accent-color);
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--dark-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
 }
 
 /*--------------------------------------------------------------
@@ -1239,10 +1430,11 @@ section,
 .portfolio .portfolio-content {
   position: relative;
   overflow: hidden;
+  border-radius: 12px;
 }
 
 .portfolio .portfolio-content img {
-  transition: 0.3s;
+  transition: transform 0.5s ease;
 }
 
 .portfolio .portfolio-content .portfolio-info {
@@ -1251,7 +1443,7 @@ section,
   inset: 0;
   z-index: 3;
   transition: all ease-in-out 0.3s;
-  background: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(135deg, rgba(10, 26, 46, 0.8), rgba(0, 168, 232, 0.4));
   padding: 15px;
 }
 
@@ -1309,12 +1501,39 @@ section,
 /*--------------------------------------------------------------
 # Testimonials Section
 --------------------------------------------------------------*/
+.testimonials {
+  padding: 80px 0;
+  background: var(--dark-bg);
+  --background-color: var(--dark-bg);
+  --default-color: #e0e8f0;
+  --heading-color: #ffffff;
+  --surface-color: var(--dark-bg-light);
+}
+
+.testimonials .section-title h2 {
+  background: rgba(0, 168, 232, 0.15);
+  color: var(--accent-color);
+}
+
+.testimonials .section-title div {
+  color: #ffffff;
+}
+
 .testimonials .testimonial-item {
-  background-color: var(--surface-color);
-  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+  background: var(--dark-bg-light);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  padding: 35px;
   position: relative;
   height: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 168, 232, 0.15);
+  transition: all 0.3s;
+}
+
+.testimonials .testimonial-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 168, 232, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
 .testimonials .testimonial-item .testimonial-img {
@@ -1329,26 +1548,28 @@ section,
   font-size: 18px;
   font-weight: bold;
   margin: 10px 0 5px 0;
+  color: #ffffff;
 }
 
 .testimonials .testimonial-item h4 {
   font-size: 14px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: var(--accent-color);
   margin: 0;
 }
 
 .testimonials .testimonial-item .stars {
-  margin: 10px 0;
+  margin: 12px 0;
 }
 
 .testimonials .testimonial-item .stars i {
-  color: #ffc107;
-  margin: 0 1px;
+  color: var(--secondary-color);
+  margin: 0 2px;
+  font-size: 14px;
 }
 
 .testimonials .testimonial-item .quote-icon-left,
 .testimonials .testimonial-item .quote-icon-right {
-  color: color-mix(in srgb, var(--accent-color), transparent 50%);
+  color: rgba(0, 168, 232, 0.4);
   font-size: 26px;
   line-height: 0;
 }
@@ -1371,6 +1592,8 @@ section,
   font-style: italic;
   margin: 15px 0 0 0;
   padding: 0;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
 }
 
 /*--------------------------------------------------------------
@@ -1378,12 +1601,23 @@ section,
 --------------------------------------------------------------*/
 .team {
   --default-color: #ffffff;
+  padding: 80px 0;
 }
 
 .team .member {
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(10, 26, 46, 0.1);
+}
+
+.team .member img {
+  transition: transform 0.5s;
+}
+
+.team .member:hover img {
+  transform: scale(1.05);
 }
 
 .team .member .member-info {
@@ -1405,16 +1639,18 @@ section,
 }
 
 .team .member .member-info-content h4 {
-  color: var(--contrast-color);
+  color: #ffffff;
   font-weight: 700;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
   font-size: 18px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .team .member .member-info-content span {
   font-style: italic;
   display: block;
   font-size: 13px;
+  color: var(--secondary-color);
 }
 
 .team .member .social {
@@ -1428,14 +1664,14 @@ section,
 }
 
 .team .member .social a {
-  transition: color 0.3s;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  transition: all 0.3s;
+  color: rgba(255, 255, 255, 0.8);
   margin: 0 10px;
   display: inline-block;
 }
 
 .team .member .social a:hover {
-  color: var(--default-color);
+  color: var(--secondary-color);
 }
 
 .team .member .social i {
@@ -1444,7 +1680,7 @@ section,
 }
 
 .team .member:hover .member-info {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.8) 20%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(0deg, rgba(10, 26, 46, 0.95) 0%, rgba(10, 26, 46, 0.7) 30%, rgba(255, 255, 255, 0) 100%);
   opacity: 1;
   transition: 0.4s;
 }
@@ -1462,21 +1698,43 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
+.contact {
+  padding: 80px 0;
+}
+
 .contact .info-item {
-  background: color-mix(in srgb, var(--default-color), transparent 96%);
+  background: #f8fbfe;
   padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 168, 232, 0.1);
+  transition: all 0.3s;
+  height: 100%;
+}
+
+.contact .info-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 168, 232, 0.1);
+  border-color: rgba(0, 168, 232, 0.2);
 }
 
 .contact .info-item i {
-  font-size: 38px;
+  font-size: 32px;
   line-height: 0;
   color: var(--accent-color);
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0, 168, 232, 0.1), rgba(0, 168, 232, 0.05));
+  border-radius: 12px;
 }
 
 .contact .info-item h3 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
-  margin: 20px 0 10px 0;
+  margin: 15px 0 8px 0;
+  color: var(--dark-bg);
 }
 
 .contact .info-item p {
@@ -1484,49 +1742,70 @@ section,
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
+  color: #666;
 }
 
+.contact .django-form,
 .contact .php-email-form {
-  background: color-mix(in srgb, var(--default-color), transparent 96%);
-  padding: 30px;
+  background: #f8fbfe;
+  padding: 35px;
   height: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 168, 232, 0.1);
 }
 
+.contact .django-form input[type=text],
+.contact .django-form input[type=email],
+.contact .django-form textarea,
 .contact .php-email-form input[type=text],
 .contact .php-email-form input[type=email],
 .contact .php-email-form textarea {
   font-size: 14px;
-  padding: 10px 15px;
+  padding: 12px 18px;
   box-shadow: none;
-  border-radius: 0;
+  border-radius: 10px;
   color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 168, 232, 0.15);
+  transition: all 0.3s;
 }
 
+.contact .django-form input[type=text]:focus,
+.contact .django-form input[type=email]:focus,
+.contact .django-form textarea:focus,
 .contact .php-email-form input[type=text]:focus,
 .contact .php-email-form input[type=email]:focus,
 .contact .php-email-form textarea:focus {
   border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(0, 168, 232, 0.1);
 }
 
+.contact .django-form input[type=text]::placeholder,
+.contact .django-form input[type=email]::placeholder,
+.contact .django-form textarea::placeholder,
 .contact .php-email-form input[type=text]::placeholder,
 .contact .php-email-form input[type=email]::placeholder,
 .contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
+  color: #aab;
 }
 
+.contact .django-form button[type=submit],
 .contact .php-email-form button[type=submit] {
-  background: var(--accent-color);
-  color: var(--contrast-color);
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-color-dark));
+  color: #ffffff;
   border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 4px;
+  padding: 14px 40px;
+  transition: all 0.4s;
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0, 168, 232, 0.3);
 }
 
+.contact .django-form button[type=submit]:hover,
 .contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 168, 232, 0.4);
 }
 
 /*--------------------------------------------------------------
@@ -1709,47 +1988,61 @@ section,
 --------------------------------------------------------------*/
 .service-details .services-list {
   background-color: var(--surface-color);
-  padding: 10px 30px;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  padding: 15px 30px;
+  border: 1px solid rgba(0, 168, 232, 0.1);
   margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(10, 26, 46, 0.06);
 }
 
 .service-details .services-list a {
   display: block;
   line-height: 1;
-  padding: 8px 0 8px 15px;
-  border-left: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
-  margin: 20px 0;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  transition: 0.3s;
+  padding: 12px 0 12px 15px;
+  border-left: 3px solid rgba(0, 168, 232, 0.15);
+  margin: 15px 0;
+  color: #666;
+  transition: all 0.3s;
+  font-size: 14px;
 }
 
 .service-details .services-list a.active {
-  color: var(--heading-color);
+  color: var(--dark-bg);
   font-weight: 700;
   border-color: var(--accent-color);
+  background: rgba(0, 168, 232, 0.05);
+  border-radius: 0 8px 8px 0;
+  padding-left: 18px;
 }
 
 .service-details .services-list a:hover {
   border-color: var(--accent-color);
+  color: var(--accent-color);
+  padding-left: 18px;
 }
 
 .service-details .services-img {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(10, 26, 46, 0.1);
 }
 
 .service-details h3 {
   font-size: 26px;
   font-weight: 700;
+  color: var(--dark-bg);
 }
 
 .service-details h4 {
   font-size: 20px;
   font-weight: 700;
+  color: var(--dark-bg);
 }
 
 .service-details p {
   font-size: 15px;
+  line-height: 1.7;
+  color: #555;
 }
 
 .service-details ul {
@@ -1759,14 +2052,14 @@ section,
 }
 
 .service-details ul li {
-  padding: 5px 0;
+  padding: 8px 0;
   display: flex;
   align-items: center;
 }
 
 .service-details ul i {
   font-size: 20px;
-  margin-right: 8px;
+  margin-right: 10px;
   color: var(--accent-color);
 }
 

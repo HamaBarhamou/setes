@@ -58,58 +58,7 @@
     }
     </script>
 
-    <style>
-        /* Main color updates */
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: #f5f5f5;
-        }
-
-        /* Header background with dark blue color */
-        .header {
-            background: #0a1a2e;
-        }
-
-        .logo h1.sitename {
-            font-size: 28px;
-            font-weight: 700;
-            color: #f5f5f5;
-        }
-
-        /* Navbar links */
-        #navmenu ul li a {
-            color: #f5f5f5;
-        }
-
-        #navmenu ul li a:hover,
-        #navmenu ul li a.active {
-            color: #5ac0e5;
-        }
-
-        /* Footer background and text color */
-        .footer {
-            background: #0a1a2e;
-            color: #f5f5f5;
-        }
-
-        .footer a {
-            color: #5ac0e5;
-        }
-
-        .footer a:hover {
-            color: #f5f5f5;
-        }
-
-        .footer .social-links a {
-            background: #5ac0e5;
-            color: #0a1a2e;
-        }
-
-        .footer .social-links a:hover {
-            background: #f5f5f5;
-            color: #0a1a2e;
-        }
-    </style>
+    {% block extra_css %}{% endblock %}
 </head>
 
 <body class="{% block body_class %}index-page{% endblock %}">
@@ -118,8 +67,8 @@
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
             <a href="{% url 'home' %}" class="logo d-flex align-items-center">
-                <img src="{% static 'assets/img/logo.jpeg' %}" alt="Logo SETES" style="height: 50px; margin-right: 10px;">
-                <h1 class="sitename" style="margin: 0;">SETES SARL</h1>
+                <img src="{% static 'assets/img/logo.jpeg' %}" alt="Logo SETES">
+                <h1 class="sitename">SETES SARL</h1>
             </a>
 
             <nav id="navmenu" class="navmenu">
@@ -149,7 +98,7 @@
         <div class="container footer-top">
           <div class="row gy-4">
             <div class="col-lg-4 col-md-6 footer-about">
-              <a href="index.html" class="logo d-flex align-items-center">
+              <a href="{% url 'home' %}" class="logo d-flex align-items-center">
                 <span class="sitename">SETES SARL</span>
               </a>
               <div class="footer-contact pt-3">
