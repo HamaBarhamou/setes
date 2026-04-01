@@ -1,9 +1,15 @@
+import logging
+
+from django.conf import settings
+from django.core.mail import send_mail
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_POST
 
 from .forms import ContactForm, NewsletterForm
 from .models import Service, TeamMember, Testimonial
+
+logger = logging.getLogger(__name__)
 
 
 def robots_txt(request):
@@ -49,7 +55,26 @@ def service_details(request, service_slug):
 def contact_submit(request):
     form = ContactForm(request.POST)
     if form.is_valid():
-        form.save()
+        contact = form.save()
+
+        # Envoyer un email de notification a contact@setes.net
+        try:
+            send_mail(
+                subject=f"[SETES Contact] {contact.subject}",
+                message=(
+                    f"Nouveau message depuis le site setes.net\n\n"
+                    f"Nom : {contact.name}\n"
+                    f"Email : {contact.email}\n"
+                    f"Objet : {contact.subject}\n\n"
+                    f"Message :\n{contact.message}"
+                ),
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=["contact@setes.net"],
+                fail_silently=False,
+            )
+        except Exception:
+            logger.exception("Echec d'envoi de l'email de contact")
+
         return JsonResponse(
             {"success": True, "message": "Votre message a bien été envoyé. Merci !"}
         )

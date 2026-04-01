@@ -1,8 +1,10 @@
 import json
+from unittest.mock import patch
 
 from django.contrib.admin.sites import AdminSite
+from django.core import mail
 from django.http import HttpRequest
-from django.test import Client, TestCase
+from django.test import Client, TestCase, override_settings
 from django.urls import reverse
 
 from .admin import (
@@ -395,19 +397,64 @@ class ServiceDetailsViewTest(TestCase):
         self.assertEqual(response.status_code, 404)
 
 
+@override_settings(
+    EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend",
+    DEFAULT_FROM_EMAIL="SETES SARL <contact@setes.net>",
+)
 class ContactSubmitViewTest(TestCase):
-    def test_post_valid(self):
-        data = {
+    def setUp(self):
+        self.valid_data = {
             "name": "Ali",
             "email": "ali@test.com",
             "subject": "Test",
             "message": "Bonjour",
         }
-        response = self.client.post(reverse("contact-submit"), data)
+
+    def test_post_valid(self):
+        response = self.client.post(reverse("contact-submit"), self.valid_data)
         self.assertEqual(response.status_code, 200)
         body = json.loads(response.content)
         self.assertTrue(body["success"])
         self.assertEqual(ContactMessage.objects.count(), 1)
+
+    def test_post_valid_sends_email(self):
+        self.client.post(reverse("contact-submit"), self.valid_data)
+        self.assertEqual(len(mail.outbox), 1)
+
+    def test_email_subject_contains_form_subject(self):
+        self.client.post(reverse("contact-submit"), self.valid_data)
+        self.assertIn("Test", mail.outbox[0].subject)
+        self.assertTrue(mail.outbox[0].subject.startswith("[SETES Contact]"))
+
+    def test_email_recipient(self):
+        self.client.post(reverse("contact-submit"), self.valid_data)
+        self.assertEqual(mail.outbox[0].to, ["contact@setes.net"])
+
+    def test_email_body_contains_sender_info(self):
+        self.client.post(reverse("contact-submit"), self.valid_data)
+        body = mail.outbox[0].body
+        self.assertIn("Ali", body)
+        self.assertIn("ali@test.com", body)
+        self.assertIn("Bonjour", body)
+
+    def test_email_from(self):
+        self.client.post(reverse("contact-submit"), self.valid_data)
+        self.assertEqual(mail.outbox[0].from_email, "SETES SARL <contact@setes.net>")
+
+    @patch("core.views.send_mail", side_effect=Exception("SMTP error"))
+    def test_email_failure_still_saves_and_returns_success(self, mock_send):
+        response = self.client.post(reverse("contact-submit"), self.valid_data)
+        self.assertEqual(response.status_code, 200)
+        body = json.loads(response.content)
+        self.assertTrue(body["success"])
+        self.assertEqual(ContactMessage.objects.count(), 1)
+
+    def test_no_email_on_invalid_form(self):
+        self.client.post(
+            reverse("contact-submit"),
+            {"name": "", "email": "bad", "subject": "", "message": ""},
+        )
+        self.assertEqual(len(mail.outbox), 0)
 
     def test_post_invalid(self):
         response = self.client.post(
